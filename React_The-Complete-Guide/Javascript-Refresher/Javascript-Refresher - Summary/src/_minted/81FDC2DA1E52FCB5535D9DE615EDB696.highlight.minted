@@ -1,0 +1,9 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n+nx}{userData}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Max\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Schwarz\PYGZdq{}}\PYG{p}{];}
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{firstName}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{userData}\PYG{p}{[}\PYG{l+m+mf}{0}\PYG{p}{];}
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{lastName}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{userData}\PYG{p}{[}\PYG{l+m+mf}{1}\PYG{p}{];}
+
+\PYG{c+c1}{// We can =\PYGZgt{}}
+
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{p}{[}\PYG{n+nx}{firstName}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{lastName}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Max\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Schwarz\PYGZdq{}}\PYG{p}{];}
+\end{MintedVerbatim}

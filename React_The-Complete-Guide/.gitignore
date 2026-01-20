@@ -1,0 +1,5 @@
+src/_minted/*
+src/*.aux
+src/*.fdb_latexmk
+src/*.fls
+src/*.log

@@ -1,0 +1,12 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+
+\PYG{c+cm}{/* import file */}
+\PYG{k}{export}\PYG{+w}{ }\PYG{k}{default}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}apikey\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{export}\PYG{+w}{ }\PYG{k+kd}{let}\PYG{+w}{ }\PYG{n+nx}{password}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}123\PYGZsq{}}\PYG{p}{;}
+\PYG{k}{export}\PYG{+w}{ }\PYG{k+kd}{let}\PYG{+w}{ }\PYG{n+nx}{username}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}user\PYGZsq{}}\PYG{p}{;}
+
+\PYG{c+cm}{/* import file */}
+\PYG{k}{import}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{k+kr}{as}\PYG{+w}{ }\PYG{n+nx}{util}\PYG{+w}{ }\PYG{k+kr}{from}\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}path/to/importfile.js\PYGZsq{}}\PYG{p}{;}
+
+\PYG{n+nx}{func}\PYG{p}{(}\PYG{n+nx}{util}\PYG{p}{.}\PYG{n+nx}{password}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{/*}\PYG{+w}{ }\PYG{n+nx}{or}\PYG{+w}{ }\PYG{n+nx}{util}\PYG{p}{.}\PYG{n+nx}{username}\PYG{+w}{ }\PYG{n+nx}{or}\PYG{+w}{ }\PYG{n+nx}{util}\PYG{p}{.}\PYG{k}{default}\PYG{+w}{ }\PYG{n+nx}{etc}
+\end{MintedVerbatim}

@@ -1,0 +1,5 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+Imagine of a const object as a house with a street address
+\PYGZhy{} You cannot change the address of the house but you can...
+\PYGZhy{} Change the furniture, the occupants, etc.
+\end{MintedVerbatim}

@@ -1,0 +1,36 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// @run\PYGZhy{}each}
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{array}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}tree\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}house\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}dog\PYGZdq{}}\PYG{p}{];}
+
+\PYG{n+nx}{array}\PYG{p}{.}\PYG{n+nx}{push}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}cat\PYGZdq{}}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{// Similar to .append}
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{val}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{array}\PYG{p}{.}\PYG{n+nx}{findIndex}\PYG{p}{((}\PYG{n+nx}{param}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{c+cm}{/*}
+\PYG{c+cm}{  findIndex can use a arrow function which takes at least one input parameter, after\PYGZhy{}which}
+\PYG{c+cm}{  the function body can then perform logic on it}
+\PYG{c+cm}{  */}
+\PYG{+w}{  }\PYG{k}{return}\PYG{+w}{ }\PYG{n+nx}{param}\PYG{+w}{ }\PYG{o}{===}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}tree\PYGZdq{}}\PYG{p}{;}
+\PYG{p}{\PYGZcb{});}
+
+\PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{val}\PYG{p}{);}
+
+\PYG{c+c1}{// @run\PYGZhy{}each}
+\PYG{n+nx}{array}\PYG{p}{.}\PYG{n+nx}{map}\PYG{p}{((}\PYG{n+nx}{item}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{c+cm}{/*}
+\PYG{c+cm}{  Iterates through each item through an array and operate logic on it, useful for API parsing + JSX}
+\PYG{c+cm}{    \PYGZhy{} Returns a new array}
+\PYG{c+cm}{  */}
+\PYG{+w}{  }\PYG{k}{return}\PYG{+w}{ }\PYG{n+nx}{item}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}!\PYGZdq{}}\PYG{p}{;}
+\PYG{p}{\PYGZcb{});}
+
+\PYG{c+c1}{// @run\PYGZhy{}each}
+\PYG{c+c1}{//Can also remove the curly braces as such:}
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{newArray}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{array}\PYG{p}{.}\PYG{n+nx}{map}\PYG{p}{((}\PYG{n+nx}{item}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{n+nx}{item}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}!\PYGZdq{}}\PYG{p}{);}
+
+\PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{newArray}\PYG{p}{);}
+\PYG{c+cm}{/*}
+\PYG{c+cm}{Map can map types to other types i.e: string in original array to JS objects}
+\PYG{c+cm}{*/}
+\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{newArray2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{array}\PYG{p}{.}\PYG{n+nx}{map}\PYG{p}{((}\PYG{n+nx}{item}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{p}{(\PYGZob{}}\PYG{+w}{ }\PYG{n+nx}{text}\PYG{o}{:}\PYG{+w}{ }\PYG{n+nx}{item}\PYG{+w}{ }\PYG{p}{\PYGZcb{}));}
+
+\PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{newArray}\PYG{p}{);}
+\end{MintedVerbatim}

@@ -198,7 +198,7 @@ const {name: userName, age} = {
 console.log(userName) // => "Max"
 
 /*
-Similarily, an object can be destructured within an object => Say we have a function: func(object), instead of accessing its attributes
+Similarly, an object can be destructured within an object => Say we have a function: func(object), instead of accessing its attributes
 with the dot notation we can destructure the object and use the fields as **local variables**
 */
 
@@ -216,10 +216,10 @@ function storeOrder({id, quantity}) {
 The spread operator can be used to merge arrays elements:
 
 ```javascript
-const oldHobbies = ["reading"]
-const newHobbies = ['sports']
+const oldHobbies = ["reading"];
+const newHobbies = ["sports"];
 
-const mergedHobbie = [...oldHobbies, ...newHobbies]
+const mergedHobby = [...oldHobbies, ...newHobbies];
 ```
 
 The spread operator can also be used on traditional objects:
@@ -236,3 +236,85 @@ const extendedUser = {
   ...user,
   ...adminPerms
 }
+```
+
+### Control Structures
+
+Iterating through elements of an array has different syntax in JS then expected, assume we have the array: `const array = ['element1', 'element2', etc]` - We can iterate through the elements in the array like: `for (const arr of array) {some logic}`
+
+```javascript
+names = ["Jax", "Ben", "Den"];
+for (name of names) {
+  console.log(name);
+}
+```
+
+### Passing Functions as Values
+
+- A function can be passed as a value to a another function. To do this **correctly**, the function being passed as a value should have its parantheses omitted
+
+```javascript
+// Using the setTimeout function
+
+const handleTimeout = () => {
+  console.log("shout here");
+};
+
+setTimeout(handleTimeout, 2000); //execute handleTimeout after 2000ms
+
+/* We can also do this with anonymous functions */
+
+setTimeout(() => {
+  console.log("shout here");
+}, 2000);
+
+/* This can obviously also be done with non-built-in functions */
+
+function log(logging) {
+  logging();
+}
+
+log(() => console.log("logging something"));
+```
+
+Similar to other programming languages, functions can be defined inside another function (making it a private function - therefore not callable outside of the _parent_ function)
+
+```javascript
+function init() {
+  function greet() {
+    console.log("Hi");
+  }
+
+  greet();
+}
+
+init();
+
+//=> 'Hi'
+```
+
+### Reference vs. Primitive Values
+
+Primitives cannot be modified (**immutable**), _modifying_ a primitive doesn't change the underlying variable but rather generates a brand new variable of the same _type_
+
+- Quick note on primitive: imagine we have an array defined as such `const arr = ['1', '2']`
+
+We are able to modify this const using methods such as `arr.push('4')`, this won't raise an error because the **const** keyword defines a constant **reference** to the object and not the value of the object itself. All objects are mutable in Javascript therefore the properties of the object can be changed just not change the address the variable is referencing.
+
+##### Good Analogy From Gemini
+
+```
+Imagine of a const object as a house with a street address
+- You cannot change the address of the house but you can...
+- Change the furniture, the occupants, etc.
+```
+
+## Reference
+
+Useful JS array methods:
+
+- **map** - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+- **find** | **findIndex** - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+- **filter** - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+
+More can be found on docs found on MDN

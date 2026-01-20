@@ -1,0 +1,88 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{minted}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    urlcolor=blue!70!black,
+    citecolor=blue!70!black
+}
+
+% Minted configuration for syntax highlighting
+\usemintedstyle{tango}
+\setminted{
+    fontsize=\small,
+    frame=single,
+    framesep=2mm,
+    baselinestretch=1.1,
+    linenos=true,
+    numbersep=5pt,
+    breaklines=true,
+    breakanywhere=true,
+    tabsize=2
+}
+
+% Custom colors for code background
+\definecolor{codebg}{RGB}{248,248,248}
+\setminted{bgcolor=codebg}
+
+\title{React-Essentials (Summary)}
+\author{}
+\date{2026-01-19}
+
+\begin{document}
+\maketitle
+\subsection{Key Takeaways}
+\begin{itemize}[leftmargin=*]
+\item A component can be defined like any other JS function. Its return body must be some sort of mark-up. Furthermore, components must be capitalized
+\item Components (\texttt{.jsx}) wrap javascript, html, and css together into one file.
+\item Since .jsx code is built with the React compiler, the code that is written is not the same code that is delivered to the end-user.
+\item Essentially, React compiles the Component Tree into the DOM Tree
+\item To insert a component into the main program body i.e: App() => \{\}.
+\end{itemize}
+\section{React Essentials}
+\subsubsection{Components}
+Components (\texttt{.jsx}) wrap javascript, html, and css together into one file. Helping keep front-end codebases relatively small.
+
+\begin{itemize}[leftmargin=*]
+\item A component can be defined like any other JS function. Its return body must be some sort of mark-up. Furthermore, components must be capitalized
+\end{itemize}
+To insert a component into the main program body i.e: App() => \{\}. We can either insert the component like any other HTML tag, or you can have the component be self-closing. For example:
+
+\begin{minted}{jsx}
+function Body(){
+    return (
+        <p> Hi! </p>
+    );
+}
+
+function App(){
+    return (
+        <title> Website </title>
+        <Body/> //or <Body> </Body>
+    );
+}
+
+export default App
+\end{minted}
+
+\subsubsection{Component Tree}
+Since .jsx code is built with the React compiler, the code that is written is not the same code that is delivered to the end-user. Using \texttt{ReactDOM}, we are able to serve a .jsx file as an entry-point into a specific element. In the starting-project example, we have a index.html file that contains a component (id = "root") which we use as the entry-point for the \texttt{App.jsx} file with following ReactDOM methods in our index.jsx file:
+
+\begin{minted}{jsx}
+import App from "./App.jsx";
+import ReactDOM from "react-dom/client";
+
+const entryPoint = document.getElementById("root");
+ReactDOM.createRoot(entryPoint).render(<App />);
+\end{minted}
+
+Essentially, React compiles the Component Tree into the DOM Tree
+
+\end{document}

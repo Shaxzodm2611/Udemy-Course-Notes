@@ -1,0 +1,13 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{function}\PYG{+w}{ }\PYG{n+nx}{init}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k+kd}{function}\PYG{+w}{ }\PYG{n+nx}{greet}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}Hi\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{  }\PYG{p}{\PYGZcb{}}
+
+\PYG{+w}{  }\PYG{n+nx}{greet}\PYG{p}{();}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{n+nx}{init}\PYG{p}{();}
+
+\PYG{c+c1}{//=\PYGZgt{} \PYGZsq{}Hi\PYGZsq{}}
+\end{MintedVerbatim}

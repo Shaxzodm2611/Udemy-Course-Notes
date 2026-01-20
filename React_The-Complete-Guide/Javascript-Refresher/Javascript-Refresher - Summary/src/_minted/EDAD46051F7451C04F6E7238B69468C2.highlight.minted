@@ -1,0 +1,6 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{p}{|}\PYGZhy{}\PYGZhy{}\PYG{+w}{ }file1.js
+\PYG{p}{|}\PYGZhy{}\PYGZhy{}\PYG{+w}{ }file2.js
+\PYG{p}{|}\PYG{+w}{   }\PYG{p}{|}\PYGZhy{}\PYGZhy{}folder
+\PYG{p}{|}\PYG{+w}{   }\PYG{p}{|}\PYG{+w}{   }\PYG{p}{|}\PYGZhy{}\PYGZhy{}\PYG{+w}{ }file3.js
+\end{MintedVerbatim}

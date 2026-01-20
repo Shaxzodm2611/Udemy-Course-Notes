@@ -1,0 +1,349 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{minted}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    urlcolor=blue!70!black,
+    citecolor=blue!70!black
+}
+
+% Minted configuration for syntax highlighting
+\usemintedstyle{tango}
+\setminted{
+    fontsize=\small,
+    frame=single,
+    framesep=2mm,
+    baselinestretch=1.1,
+    linenos=true,
+    numbersep=5pt,
+    breaklines=true,
+    breakanywhere=true,
+    tabsize=2
+}
+
+% Custom colors for code background
+\definecolor{codebg}{RGB}{248,248,248}
+\setminted{bgcolor=codebg}
+
+\title{Javascript-Refresher (Summary)}
+\author{}
+\date{2026-01-19}
+
+\begin{document}
+\maketitle
+\subsection{Key Takeaways}
+\begin{itemize}[leftmargin=*]
+\item More specifically using import and export allow us to import and export variables, functions, objects, etc from one .js file into another for example:
+\item Primitives cannot be modified (immutable), modifying a primitive doesn't change the underlying variable but rather generates a brand new variable of the same type
+\item Similar to other programming languages, functions can be defined inside another function (making it a private function - therefore not callable outside of the parent function)
+\item We can directly export values by using the \texttt{default} keyword: \texttt{export default 'thing'}.
+\item \texttt{const} : creates a immutable variable (i.e: cannot be reassigned after creation)
+\item 2.1 If returning a JS object then parentheses must be wrapped around the object defintion: \texttt{number => (\{'age' : number\})}
+\item map - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array/map
+\item filter - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array/filter
+\end{itemize}
+\section{Section 2 - Javascript Refresher}
+\subsubsection{Import and Export}
+\begin{minted}{html}
+<script src="../path/to/js" type="module"></script>
+\end{minted}
+
+More specifically using import and export allow us to import and export variables, functions, objects, etc from one .js file into another for example:
+
+\begin{minted}{bash}
+|-- file1.js
+|-- file2.js
+|   |--folder
+|   |   |-- file3.js
+\end{minted}
+
+\begin{minted}{javascript}
+
+/* File 1 */
+export let var = "string";
+
+/* File 2 */
+import { var } from 'file1.js'
+
+/* File 3 - React */
+import { var } from 'file1'
+\end{minted}
+
+We can directly export values by using the \texttt{default} keyword: \texttt{export default 'thing'}. To import said 'thing', we simply remove the curly braces. If you are exporting multiple things from a .js file, instead of explicitly importing by seperating with a comma, we can do:
+
+\begin{minted}{javascript}
+
+/* import file */
+export default 'apikey';
+export let password = '123';
+export let username = 'user';
+
+/* import file */
+import * as util from 'path/to/importfile.js';
+
+func(util.password) /* or util.username or util.default etc
+\end{minted}
+
+\subsubsection{Variables, Operators}
+\texttt{const} : creates a immutable variable (i.e: cannot be reassigned after creation)
+
+\texttt{let} : creates a mutable variable
+
+\subsubsection{Functions}
+\begin{minted}{javascript}
+function somefunc(param1, paramN) {
+  console.log(`Some func with ${param1}, and ${paramN}`);
+}
+\end{minted}
+
+Arrow Functions
+
+\begin{minted}{javascript}
+//Arrow functions are particularly useful with anonymous functions (functions that do not have a 'name')
+
+export default (param1, paramN) => {
+  console.log(`Some func with ${param1} and ${paramN}`);
+};
+\end{minted}
+
+\begin{itemize}[leftmargin=*]
+\item If a arrow func has one parameter the parentheses can be omitted: \texttt{param1 => \{\}}
+\item If a arrow func only contains a return statement and no other logic, you can omit the curly braces: \texttt{param1 => param1 + 2}
+\end{itemize}
+2.1 If returning a JS object then parentheses must be wrapped around the object defintion: \texttt{number => (\{'age' : number\})}
+
+\subsubsection{Objects \& Classes}
+\begin{itemize}[leftmargin=*]
+\item Console logging objects outputs them in a JSON-like format:
+\end{itemize}
+\begin{minted}{javascript}
+treasure = "$1000"
+date = "Dec 1st 2025"
+const records = {
+        key : treasure,
+        date : date
+}
+console.log(records)
+
+-----------------------------------
+key : "$1000"
+date : "Dec 1st 2025"
+\end{minted}
+
+JS objects can also contain methods. Methods created in JS objects do not need the function keyword. Methods defined within a JS object can access the values, and/or other methods within the object using the \texttt{this} keyword
+
+\begin{minted}{javascript}
+const records = {
+    age : 24
+    money : "$1000"
+
+    strRepr(){
+        console.log(`Age: ${this.age}, Net-worth: ${this.money}`);
+    }
+}
+\end{minted}
+
+blueprints for JS objects can be defined using the \texttt{class} keyword, which can then later be used to create objects. Constructors for classes can be defined using the \texttt{constructor()\{ \}} method. In a constructor, object variables can be defined using the previously mentioned this keyword (similar to self in Python)
+
+\subsubsection{Arrays}
+Arrays are defined with square brackets: \texttt{const arr = [val1, val2, ..., valn]}
+
+\begin{minted}{javascript}
+// @run-each
+const array = ["tree", "house", "dog"];
+
+array.push("cat"); // Similar to .append
+const val = array.findIndex((param) => {
+  /*
+  findIndex can use a arrow function which takes at least one input parameter, after-which
+  the function body can then perform logic on it
+  */
+  return param === "tree";
+});
+
+console.log(val);
+
+// @run-each
+array.map((item) => {
+  /*
+  Iterates through each item through an array and operate logic on it, useful for API parsing + JSX
+    - Returns a new array
+  */
+  return item + "!";
+});
+
+// @run-each
+//Can also remove the curly braces as such:
+const newArray = array.map((item) => item + "!");
+
+console.log(newArray);
+/*
+Map can map types to other types i.e: string in original array to JS objects
+*/
+const newArray2 = array.map((item) => ({ text: item }));
+
+console.log(newArray);
+\end{minted}
+
+Say we have an array defined as: \texttt{userData = ['Max', 'Schwarz']}, instead of assigning the array values to variables as such:
+
+\begin{minted}{javascript}
+userData = ["Max", "Schwarz"];
+const firstName = userData[0];
+const lastName = userData[1];
+
+// We can =>
+
+const [firstName, lastName] = ["Max", "Schwarz"];
+\end{minted}
+
+\begin{minted}{javascript}
+
+userDetail = {
+  name : 'Max'
+  age : 24
+}
+
+userName = userDetail.name
+userAge = userDetail.age
+
+//We can do this =>   *Note, that the variable names must match the field names of the object
+const {name, age} = {
+  name: "Max"
+  age: 24
+}
+
+//An alias can be assigned to the variable name by: {fieldName : alias}
+
+const {name: userName, age} = {
+  name: "Max"
+  age: 34
+}
+
+console.log(userName) // => "Max"
+
+/*
+Similarly, an object can be destructured within an object => Say we have a function: func(object), instead of accessing its attributes
+with the dot notation we can destructure the object and use the fields as **local variables**
+*/
+
+function storeOrder(order) {
+  console.log(`ORDER: ${order.id} : ${order.quantity} `)
+}
+
+function storeOrder({id, quantity}) {
+  console.log(`ORDER: ${id} : ${quantity}`)
+}
+\end{minted}
+
+\subsubsection{Spread Operator}
+The spread operator can be used to merge arrays elements:
+
+\begin{minted}{javascript}
+const oldHobbies = ["reading"];
+const newHobbies = ["sports"];
+
+const mergedHobby = [...oldHobbies, ...newHobbies];
+\end{minted}
+
+The spread operator can also be used on traditional objects:
+
+\begin{minted}{javascript}
+const user = {
+  name: 'Max'
+  age: 34
+}
+const adminPerms = {
+  isAdmin : true
+}
+const extendedUser = {
+  ...user,
+  ...adminPerms
+}
+\end{minted}
+
+\subsubsection{Control Structures}
+Iterating through elements of an array has different syntax in JS then expected, assume we have the array: \texttt{const array = ['element1', 'element2', etc]} - We can iterate through the elements in the array like: \texttt{for (const arr of array) \{some logic\}}
+
+\begin{minted}{javascript}
+names = ["Jax", "Ben", "Den"];
+for (name of names) {
+  console.log(name);
+}
+\end{minted}
+
+\subsubsection{Passing Functions as Values}
+\begin{itemize}[leftmargin=*]
+\item A function can be passed as a value to a another function. To do this correctly, the function being passed as a value should have its parantheses omitted
+\end{itemize}
+\begin{minted}{javascript}
+// Using the setTimeout function
+
+const handleTimeout = () => {
+  console.log("shout here");
+};
+
+setTimeout(handleTimeout, 2000); //execute handleTimeout after 2000ms
+
+/* We can also do this with anonymous functions */
+
+setTimeout(() => {
+  console.log("shout here");
+}, 2000);
+
+/* This can obviously also be done with non-built-in functions */
+
+function log(logging) {
+  logging();
+}
+
+log(() => console.log("logging something"));
+\end{minted}
+
+Similar to other programming languages, functions can be defined inside another function (making it a private function - therefore not callable outside of the parent function)
+
+\begin{minted}{javascript}
+function init() {
+  function greet() {
+    console.log("Hi");
+  }
+
+  greet();
+}
+
+init();
+
+//=> 'Hi'
+\end{minted}
+
+\subsubsection{Reference vs. Primitive Values}
+Primitives cannot be modified (immutable), modifying a primitive doesn't change the underlying variable but rather generates a brand new variable of the same type
+
+\begin{itemize}[leftmargin=*]
+\item Quick note on primitive: imagine we have an array defined as such \texttt{const arr = ['1', '2']}
+\end{itemize}
+We are able to modify this const using methods such as \texttt{arr.push('4')}, this won't raise an error because the const keyword defines a constant reference to the object and not the value of the object itself. All objects are mutable in Javascript therefore the properties of the object can be changed just not change the address the variable is referencing.
+
+\paragraph{Good Analogy From Gemini}
+\begin{minted}{text}
+Imagine of a const object as a house with a street address
+- You cannot change the address of the house but you can...
+- Change the furniture, the occupants, etc.
+\end{minted}
+
+\subsection{Reference}
+Useful JS array methods:
+
+\begin{itemize}[leftmargin=*]
+\item map - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/Array/map
+\end{itemize}
+More can be found on docs found on MDN
+
+\end{document}
