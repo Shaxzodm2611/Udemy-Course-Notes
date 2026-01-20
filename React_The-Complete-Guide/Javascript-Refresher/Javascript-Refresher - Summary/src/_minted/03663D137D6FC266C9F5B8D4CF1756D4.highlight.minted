@@ -1,7 +1,0 @@
-\begin{MintedVerbatim}[commandchars=\\\{\}]
-\PYG{c+c1}{//Arrow functions are particularly useful with anonymous functions (functions that do not have a \PYGZsq{}name\PYGZsq{})}
-
-\PYG{k}{export}\PYG{+w}{ }\PYG{k}{default}\PYG{+w}{ }\PYG{p}{(}\PYG{n+nx}{param1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{paramN}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{=\PYGZgt{}}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
-\PYG{+w}{  }\PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+sb}{`Some func with }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nx}{param1}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+sb}{ and }\PYG{l+s+si}{\PYGZdl{}\PYGZob{}}\PYG{n+nx}{paramN}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+sb}{`}\PYG{p}{);}
-\PYG{p}{\PYGZcb{};}
-\end{MintedVerbatim}

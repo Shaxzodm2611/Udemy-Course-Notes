@@ -1,5 +1,5 @@
 # LaTeX build artifacts
-**/_minted/
+**/src/_minted/
 **/*.aux
 **/*.fdb_latexmk
 **/*.fls

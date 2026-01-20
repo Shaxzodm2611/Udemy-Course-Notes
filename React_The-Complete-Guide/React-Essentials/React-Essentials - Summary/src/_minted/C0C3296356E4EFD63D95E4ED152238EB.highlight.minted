@@ -1,7 +1,0 @@
-\begin{MintedVerbatim}[commandchars=\\\{\}]
-\PYG{k}{import}\PYG{+w}{ }\PYG{n+nx}{App}\PYG{+w}{ }\PYG{k+kr}{from}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}./App.jsx\PYGZdq{}}\PYG{p}{;}
-\PYG{k}{import}\PYG{+w}{ }\PYG{n+nx}{ReactDOM}\PYG{+w}{ }\PYG{k+kr}{from}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}react\PYGZhy{}dom/client\PYGZdq{}}\PYG{p}{;}
-
-\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{entryPoint}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{document}\PYG{p}{.}\PYG{n+nx}{getElementById}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}root\PYGZdq{}}\PYG{p}{);}
-\PYG{n+nx}{ReactDOM}\PYG{p}{.}\PYG{n+nx}{createRoot}\PYG{p}{(}\PYG{n+nx}{entryPoint}\PYG{p}{).}\PYG{n+nx}{render}\PYG{p}{(\PYGZlt{}}\PYG{n+nt}{App}\PYG{+w}{ }\PYG{p}{/\PYGZgt{});}
-\end{MintedVerbatim}

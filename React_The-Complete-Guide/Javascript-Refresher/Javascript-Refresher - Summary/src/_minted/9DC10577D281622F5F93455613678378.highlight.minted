@@ -1,6 +1,0 @@
-\begin{MintedVerbatim}[commandchars=\\\{\}]
-\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{oldHobbies}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}reading\PYGZdq{}}\PYG{p}{];}
-\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{newHobbies}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}sports\PYGZdq{}}\PYG{p}{];}
-
-\PYG{k+kd}{const}\PYG{+w}{ }\PYG{n+nx}{mergedHobby}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[...}\PYG{n+nx}{oldHobbies}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{...}\PYG{n+nx}{newHobbies}\PYG{p}{];}
-\end{MintedVerbatim}

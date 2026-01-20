@@ -1,6 +1,0 @@
-\begin{MintedVerbatim}[commandchars=\\\{\}]
-\PYG{n+nx}{names}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}Jax\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Ben\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Den\PYGZdq{}}\PYG{p}{];}
-\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{n+nx}{name}\PYG{+w}{ }\PYG{k}{of}\PYG{+w}{ }\PYG{n+nx}{names}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
-\PYG{+w}{  }\PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{n+nx}{name}\PYG{p}{);}
-\PYG{p}{\PYGZcb{}}
-\end{MintedVerbatim}
