@@ -1,5 +1,11 @@
-*/src/_minted/*
-*/src/*.aux
-*/src/*.fdb_latexmk
-*/src/*.fls
-*/src/*.log
+# LaTeX build artifacts
+**/_minted/
+**/*.aux
+**/*.fdb_latexmk
+**/*.fls
+**/*.log
+**/*.out
+**/*.synctex.gz
+**/*.toc
+**/*.blg
+**/*.bbl
